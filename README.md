@@ -1,4 +1,4 @@
-<div align="center"> <img src="imgs/icon.svg" alt="MDIS"></div>
+<div align="center"> <img src="https://raw.githubusercontent.com/memecoder12345678/MDIS/refs/heads/main/imgs/icon.svg" alt="MDIS"></div>
 
 <div align="center">
   <img src="https://img.shields.io/badge/creator-MemeCoder-red" alt="Made with ❤️ by MemeCoder">
@@ -37,11 +37,14 @@ You can test the MDIS tool with the following identifiers:
 from src.mdis import MDISParser
 
 # Test case
-identifier = "Win:DCry.A#Ransom!Removable"
-parser = MDISParser(identifier)
+test_cases = ["And:SpyFin.II.B#Spy_Banker!Phish", "Win:DCry.A#Ransom!Removable"]
+for id in test_cases:
+    print(
+        MDISParser(id).to_natural()
+        if MDISParser(id).is_valid()
+        else f"'{id}' is an invalid identifier."
+    )
 
-if parser.is_valid():
-    print(parser.to_natural())
 ```
 
 ## Contributing
