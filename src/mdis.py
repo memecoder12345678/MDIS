@@ -117,23 +117,62 @@ def _describe_version(version_code):
 
 
 class MDISParserError(Exception):
+    """
+    Custom exception raised when an MDIS identifier fails validation or parsing.
+
+    Args:
+        err (str): Error message to display.
+    """
+
     def __init__(self, err):
         super().__init__(err)
 
 
 class MDISParser:
+    """
+    A parser for MDIS malware identifiers.
+
+    Parses and optionally enriches identifiers based on the official MDIS dictionaries.
+    The parser supports extracting raw data as well as generating natural language reports.
+
+    Attributes:
+        identifier (str): The MDIS-formatted identifier to parse.
+        _match (re.Match): The match object after applying regex to the identifier.
+    """
+
     REGEX_PATTERN = _build_mdis_regex(DICTIONARIES)
 
     def __init__(self, identifier):
+        """
+        Initialize the parser with an identifier.
+
+        Args:
+            identifier (str): The MDIS identifier string to be parsed.
+        """
         self.identifier = identifier
         self._match = self.REGEX_PATTERN.match(self.identifier)
 
     def is_valid(self):
+        """
+        Check if the identifier is valid based on MDIS regex rules.
+
+        Returns:
+            bool: True if valid, False otherwise.
+        """
         return self._match is not None
 
     def parse(self, more_info=False):
+        """
+        Parse the MDIS identifier and extract structured data.
+
+        Args:
+            more_info (bool): If True, includes detailed descriptions from dictionaries.
+
+        Returns:
+            dict: Parsed data containing identifier components. Raises MDISParserError if invalid.
+        """
         if not self.is_valid():
-            return MDISParserError(f"'{id}' is an invalid identifier.")
+            return MDISParserError(f"'{self.identifier}' is an invalid identifier.")
         data = self._match.groupdict()
         if more_info:
             os_code = data["os"]
@@ -154,7 +193,7 @@ class MDISParser:
                 for v in vectors
             ]
             result = {
-                "mdisv3_identifier": id,
+                "mdis_identifier": id,
                 "os": {"code": os_code, "description": os_desc},
                 "family": family_desc,
                 "version": {
@@ -170,6 +209,12 @@ class MDISParser:
         return data
 
     def to_natural(self):
+        """
+        Convert the MDIS identifier into a human-readable description.
+
+        Returns:
+            str: A natural language representation of the identifier.
+        """
         data = self.parse(more_info=True)
         os_desc = data["os"]["description"]
         family = data["family"]
@@ -179,7 +224,15 @@ class MDISParser:
         return f"{os_desc}, {behaviors}, Family {family} {version}, {vectors}-based delivery"
 
     def dump_report_file(self):
+        """
+        Dump the enriched parsed result into a JSON report file.
+
+        The output filename will be based on the malware family and version.
+
+        Returns:
+            None
+        """
         data = self.parse(more_info=True)
-        output_filename = f"report_{data["family"]}_{data["version"]}.json"
+        output_filename = f'report_{data["family"]}_{data["version"]["code"]}.json'
         with open(output_filename, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=4, ensure_ascii=False)
