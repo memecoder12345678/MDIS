@@ -14,6 +14,12 @@ MDIS (Malware Detection and Identification System) is an identifier format that 
 - Classifies malware based on identifiers like OS, family, version, behaviors, and infection vectors.
 - Outputs structured JSON reports for easier analysis.
 
+## Why MDIS?
+- All essential threat info packed into a single line
+- Easy for analysts to interpret
+- Suitable for automation, threat intelligence sharing
+- Expandable to include new behaviors, vectors, OSes
+
 ## Installation
 To get started with this project,  just install it via `pip`:
 
@@ -21,16 +27,7 @@ To get started with this project,  just install it via `pip`:
 pip install mdis-sec
 ```
 
-## Usage
-
-After cloning the repository, simply run the script to test the MDIS functionality:
-
-```bash
-python src/mdis.py
-```
-
 ## Example Usage
-
 You can test the MDIS tool with the following identifiers:
 
 ```python
@@ -48,13 +45,11 @@ for id in test_cases:
 ```
 
 ## Contributing
-
 Feel free to open issues or submit pull requests if you have any suggestions or improvements!
 
 ## More Information
 For more information about the project, please refer to the [`docs/`](./docs) directory.
 
 ## License
-
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
