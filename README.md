@@ -8,17 +8,17 @@
 </div>
 <h1 align="center">MDIS - Malware Detection and Identification System</h1>
 
-MDIS (Malware Detection and Identification System) is a Python-based tool designed to help researchers and analysts classify and identify malware threats. It parses malware identifiers and outputs detailed reports based on behavior, infection vector, and target OS.
+MDIS (Malware Detection and Identification System) is an identifier format that standardizes malware classification. The syntax is designed to encode a threat's primary attributes, including its behavior, infection vector, and target OS.
 
 ## Features
 - Classifies malware based on identifiers like OS, family, version, behaviors, and infection vectors.
 - Outputs structured JSON reports for easier analysis.
 
 ## Installation
-To get started with this project, just clone the repository:
+To get started with this project,  just install it via `pip`:
 
 ```bash
-git clone https://github.com/memecoder123456/MDIS.git
+pip install mdis-sec
 ```
 
 ## Usage
