@@ -34,7 +34,7 @@ python src/mdis.py
 You can test the MDIS tool with the following identifiers:
 
 ```python
-from src.mdis import MDISParser
+from MDIS import MDISParser
 
 # Test case
 test_cases = ["And:SpyFin.II.B#Spy_Banker!Phish", "Win:DCry.A#Ransom!Removable"]
