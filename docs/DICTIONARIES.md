@@ -57,26 +57,27 @@ This document describes the complete set of dictionaries used by **MDIS** (Malwa
 
 ## Infection Vectors
 
-| Code        | Infection Method                         |
-| ----------- | ---------------------------------------- |
-| Phish       | Phishing emails / websites               |
-| Exploit     | Software vulnerability exploitation      |
-| Removable   | USB / removable devices                  |
-| PUA         | Potentially Unwanted Applications        |
-| DriveBy     | Malicious websites                       |
-| NetShare    | Network shares                           |
-| Social      | Social media platforms                   |
-| IM          | Instant messaging apps                   |
-| Watering    | Watering hole attacks                    |
-| Supply      | Supply chain compromise                  |
-| Brute       | Brute-force attacks                      |
-| EmailAttach | Email attachments                        |
-| FakeApp     | Fake apps in app stores                  |
-| Torrent     | Peer-to-peer file sharing software       |
-| Malvertise  | Malicious advertising                    |
-| Preload     | Pre-installed (OEM, cracked OS)          |
-| Script      | Malicious macros, PowerShell, JS         |
-| DriveAuto   | Spreads via autorun.inf (legacy Windows) |
+| Code        | Infection Method                              |
+| ----------- | --------------------------------------------- |
+| Phish       | Phishing emails / websites                    |
+| Exploit     | Software vulnerability exploitation           |
+| Removable   | USB / removable devices                       |
+| PUA         | Potentially Unwanted Applications             |
+| DriveBy     | Malicious websites                            |
+| NetShare    | Network shares                                |
+| Social      | Social media platforms                        |
+| IM          | Instant messaging apps                        |
+| Watering    | Watering hole attacks                         |
+| Supply      | Supply chain compromise                       |
+| Brute       | Brute-force attacks                           |
+| EmailAttach | Email attachments                             |
+| FakeApp     | Fake apps in app stores                       |
+| Torrent     | Peer-to-peer file sharing software            |
+| Malvertise  | Malicious advertising                         |
+| Preload     | Pre-installed (OEM, cracked OS)               |
+| Script      | Malicious macros, PowerShell, JS              |
+| DriveAuto   | Spreads via autorun.inf (legacy Windows)      |
+| Unknown     | Vector not identified - needs deeper analysis |
 
 ---
 
