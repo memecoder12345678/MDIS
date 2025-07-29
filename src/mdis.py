@@ -50,6 +50,9 @@ DICTIONARIES = {
         "Polymorph": "Self-modifies code to avoid detection",
         "Obfuscator": "Obfuscates code to hinder analysis",
         "Downloader": "Downloads additional payloads remotely",
+        "Trojan": "Disguises as legitimate software",
+        "Joker": "Tricks users with fake threats",
+        "RogueModule": "Malicious plugin or extension",
     },
     "infection_vectors": {
         "Phish": "Phishing emails/websites",
@@ -91,6 +94,7 @@ def _build_mdis_regex(dictionaries):
         f"#{behaviors_pattern}"
         f"!{vectors_pattern}$"
     )
+    print(full_pattern)
     return re.compile(full_pattern)
 
 
@@ -181,7 +185,7 @@ class MDISParser:
             dict: Parsed data containing identifier components. Raises MDISParserError if invalid.
         """
         if not self.is_valid():
-            return MDISParserError(f"'{self.identifier}' is an invalid identifier.")
+            raise MDISParserError(f"'{self.identifier}' is an invalid identifier.")
         data = self._match.groupdict()
         if more_info:
             os_code = data["os"]
@@ -202,7 +206,7 @@ class MDISParser:
                 for v in vectors
             ]
             result = {
-                "mdis_identifier": id,
+                "mdis_identifier": self.identifier,
                 "os": {"code": os_code, "description": os_desc},
                 "family": family_desc,
                 "version": {
@@ -245,3 +249,25 @@ class MDISParser:
         output_filename = f'report_{data["family"]}_{data["version"]["code"]}.json'
         with open(output_filename, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=4, ensure_ascii=False)
+
+    @staticmethod
+    def build_id(fields):
+        """
+        Build MDIS identifier string from structured fields.
+
+        Args:
+            fields (dict): Must include keys 'os', 'family', 'behavior', 'version', and 'vector'.
+
+        Returns:
+            str: MDIS-formatted identifier.
+        """
+        try:
+            os_code = fields["os"]
+            family = fields["family"]
+            behavior = fields["behavior"]
+            version = fields["version"]
+            vector = fields["vector"]
+        except KeyError as e:
+            raise ValueError(f"Missing required field: {e}")
+        id_str = f"{os_code}:{family}.{version}#{behavior}!{vector}"
+        return id_str
