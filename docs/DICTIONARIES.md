@@ -52,6 +52,9 @@ This document describes the complete set of dictionaries used by **MDIS** (Malwa
 | Polymorph    | Self-modifies code to avoid detection   |
 | Obfuscator   | Obfuscates code to hinder analysis      |
 | Downloader   | Downloads additional payloads remotely  |
+| Trojan       | Disguises as legitimate software        |
+| Joker        | Tricks users with fake threats          |
+| RogueModule  | Malicious plugin or extension           |
 
 ---
 
@@ -77,7 +80,7 @@ This document describes the complete set of dictionaries used by **MDIS** (Malwa
 | Preload     | Pre-installed (OEM, cracked OS)               |
 | Script      | Malicious macros, PowerShell, JS              |
 | DriveAuto   | Spreads via autorun.inf (legacy Windows)      |
-| Unknown     | Vector not identified - needs deeper analysis |
+| Unknown     | Vector not identified (needs deeper analysis) |
 
 ---
 
