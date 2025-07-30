@@ -78,6 +78,7 @@ DICTIONARIES = {
         "Script": "Malicious macros, PowerShell, JS",
         "DriveAuto": "Spreads via autorun.inf (old Windows)",
         "Unknown": "Vector not identified (needs deeper analysis)",
+        "None": "No self-propagation (manual install only)",
     },
 }
 
