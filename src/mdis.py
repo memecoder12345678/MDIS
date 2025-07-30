@@ -53,7 +53,7 @@ DICTIONARIES = {
         "Trojan": "Disguises as legitimate software",
         "Joker": "Tricks users with fake threats",
         "RogueModule": "Malicious plugin or extension",
-        "C2:" "Used as a Command-and-Control",
+        "C2": "Used as a Command-and-Control",
         "Loader": "Used to load other malware",
         "Packer": "Packed to avoid detection",
         "Scanner": "Scans for vulnerabilities",
