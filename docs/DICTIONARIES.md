@@ -78,6 +78,9 @@ This document describes the complete set of dictionaries used by **MDIS** (Malwa
 | Loader       | Used to load other malware              |
 | Packer       | Packed to avoid detection               |
 | Scanner      | Scans for vulnerabilities               |
+| HackTool     |Used for hacking or cracking             |
+| FakeTool     |Fake hacking or cracking tool            |
+| Unknown      |Unknown behavior (needs deeper analysis) |
 
 ---
 
