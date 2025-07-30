@@ -51,5 +51,5 @@ Feel free to open issues or submit pull requests if you have any suggestions or 
 For more information about the project, please refer to the [`docs/`](./docs) directory.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
