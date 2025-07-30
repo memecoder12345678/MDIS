@@ -238,7 +238,7 @@ class MDISParser:
                 {
                     "code": v,
                     "description": DICTIONARIES["infection_vectors"].get(
-                        v.capitalize()
+                        v
                     ),
                 }
                 for v in vectors
