@@ -21,6 +21,25 @@ DICTIONARIES = {
         "Web": "Web Applications",
         "MSE": "Multi-Platform",
         "VM": "Virtualization Environments",
+        "Kai": "KaiOS",
+        "Tiz": "Tizen",
+        "Palm": "Palm OS",
+        "Chrome": "Chrome OS",
+        "RTOS": "Generic RTOS",
+        "Zeph": "Zephyr",
+        "Contiki": "Contiki",
+        "RIOT": "RIOT OS",
+        "Tiny": "TinyOS",
+        "ZOS": "IBM z/OS",
+        "AIX": "IBM AIX",
+        "OpenVMS": "OpenVMS",
+        "Solaris": "Solaris",
+        "Alpine": "Alpine Linux",
+        "Photon": "Photon OS",
+        "Clear": "Clear Linux",
+        "RHEL": "Red Hat Enterprise",
+        "SLES": "SUSE Enterprise",
+        "Nix": "NixOS"
     },
     "behaviors": {
         "Ransom": "Encrypts data for ransom",
@@ -75,7 +94,7 @@ DICTIONARIES = {
         "Torrent": "Peer-to-peer file sharing software",
         "Malvertise": "Malicious advertising",
         "Preload": "Pre-installed (OEM, cracked OS)",
-        "Script": "Malicious macros, PowerShell, JS",
+        "Script": "Malicious macros, PowerShell, JS, etc.",
         "DriveAuto": "Spreads via autorun.inf (old Windows)",
         "Unknown": "Vector not identified (needs deeper analysis)",
         "None": "No self-propagation (manual install only)",
@@ -100,7 +119,7 @@ def _build_mdis_regex(dictionaries):
         f"!{vectors_pattern}$"
     )
     # print(full_pattern)
-    return re.compile(full_pattern)
+    return re.compile(full_pattern, re.IGNORECASE)
 
 
 def _roman_to_int(s):
@@ -194,7 +213,7 @@ class MDISParser:
         data = self._match.groupdict()
         if more_info:
             os_code = data["os"]
-            os_desc = DICTIONARIES["target_os"].get(os_code)
+            os_desc = DICTIONARIES["target_os"].get(os_code.capitalize())
             family_desc = data["family"]
             version_code = data["version"]
             version = _describe_version(version_code)
@@ -202,12 +221,12 @@ class MDISParser:
             version_structured = version[1]
             behaviors = data["behavior"].split("_")
             behavior_descs = [
-                {"code": b, "description": DICTIONARIES["behaviors"].get(b)}
+                {"code": b, "description": DICTIONARIES["behaviors"].get(b.capitalize())}
                 for b in behaviors
             ]
             vectors = data["vector"].split("_")
             vector_descs = [
-                {"code": v, "description": DICTIONARIES["infection_vectors"].get(v)}
+                {"code": v, "description": DICTIONARIES["infection_vectors"].get(v.capitalize())}
                 for v in vectors
             ]
             result = {
