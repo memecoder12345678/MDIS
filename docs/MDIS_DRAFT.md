@@ -1,4 +1,4 @@
-# MDIS Draft v0.9
+# MDIS Draft v0.1.2
 
 ### Purpose:
 To define a minimal yet expressive malware identifier that includes:
