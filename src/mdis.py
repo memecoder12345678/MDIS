@@ -6,6 +6,7 @@ A minimal yet expressive malware identifier system,
 designed for fast parsing, clarity, and extensibility.
 """
 
+import os
 import re
 import json
 
@@ -273,7 +274,7 @@ class MDISParser:
         vectors = ", ".join([v["description"] for v in data["vectors"]])
         return f"{os_desc}, {behaviors}, Family {family} {version}, {vectors}-based delivery"
 
-    def dump_report_file(self):
+    def dump_report_file(self, output_dir="."):
         """
         Dump the enriched parsed result into a JSON report file.
 
@@ -283,8 +284,9 @@ class MDISParser:
             None
         """
         data = self.parse(more_info=True)
-        output_filename = f'report_{data["family"]}_{data["version"]["code"]}.json'
-        with open(output_filename, "w", encoding="utf-8") as f:
+        filename = f'report_{data["family"]}_{data["version"]["code"]}.json'
+        output_path = os.path.join(output_dir, filename)
+        with open(output_path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=4, ensure_ascii=False)
 
     def to_stix_dict(self):
