@@ -6,18 +6,37 @@ This document describes the complete set of dictionaries used by **MDIS** (Malwa
 
 ## Target Operating Systems
 
-| Code | Operating System            |
-| ---- | --------------------------- |
-| Win  | Windows                     |
-| Lin  | Linux                       |
-| And  | Android                     |
-| Mac  | macOS                       |
-| iOS  | iOS                         |
-| IoT  | Internet of Things          |
-| BSD  | BSD-based OS                |
-| Web  | Web Applications            |
-| MSE  | Multi-Platform              |
-| VM   | Virtualization Environments |
+| Code    | Operating System             |
+| ------- | ---------------------------- |
+| Win     | Windows                      |
+| Lin     | Linux                        |
+| And     | Android                      |
+| Mac     | macOS                        |
+| iOS     | iOS                          |
+| IoT     | Internet of Things           |
+| BSD     | BSD-based OS                 |
+| Web     | Web Applications             |
+| MSE     | Multi-Platform               |
+| VM      | Virtualization Environments  |
+| Kai     | KaiOS                        |
+| Tiz     | Tizen                        |
+| Palm    | Palm OS                      |
+| Chrome  | Chrome OS                    |
+| RTOS    | Generic RTOS                 |
+| Zeph    | Zephyr                       |
+| Contiki | Contiki                      |
+| RIOT    | RIOT OS                      |
+| Tiny    | TinyOS                       |
+| ZOS     | IBM z/OS                     |
+| AIX     | IBM AIX                      |
+| OpenVMS | OpenVMS                      |
+| Solaris | Solaris                      |
+| Alpine  | Alpine Linux                 |
+| Photon  | Photon OS                    |
+| Clear   | Clear Linux                  |
+| RHEL    | Red Hat Enterprise Linux     |
+| SLES    | SUSE Linux Enterprise Server |
+| Nix     | NixOS                        |
 
 ---
 
@@ -82,7 +101,7 @@ This document describes the complete set of dictionaries used by **MDIS** (Malwa
 | Torrent     | Peer-to-peer file sharing software            |
 | Malvertise  | Malicious advertising                         |
 | Preload     | Pre-installed (OEM, cracked OS)               |
-| Script      | Malicious macros, PowerShell, JS              |
+| Script      | Malicious macros, PowerShell, JS, etc.        |
 | DriveAuto   | Spreads via autorun.inf (legacy Windows)      |
 | Unknown     | Vector not identified (needs deeper analysis) |
 | None        | No self-propagation (manual install only)     |
