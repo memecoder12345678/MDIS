@@ -98,7 +98,7 @@ def _build_mdis_regex(dictionaries):
         f"#{behaviors_pattern}"
         f"!{vectors_pattern}$"
     )
-    print(full_pattern)
+    # print(full_pattern)
     return re.compile(full_pattern)
 
 
