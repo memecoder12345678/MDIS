@@ -1,6 +1,6 @@
 # MDIS - Malware Dictionaries
 
-This document describes the complete set of dictionaries used by **MDIS** (Malware Detection and Identification System) to standardize and define malware. These dictionaries allow the system to easily parse, extract, and display information in a format that is human-readable and machine-processable.
+This document describes the complete set of dictionaries used by **MDIS** (Malware Detection and Identification System) to standardize and define malware. These dictionaries allow the system to easily parse, extract, and display information in a human-readable and machine-processable format.
 
 ---
 
@@ -66,9 +66,9 @@ This document describes the complete set of dictionaries used by **MDIS** (Malwa
 
 | Code        | Infection Method                              |
 | ----------- | --------------------------------------------- |
-| Phish       | Phishing emails / websites                    |
+| Phish       | Phishing emails/websites                      |
 | Exploit     | Software vulnerability exploitation           |
-| Removable   | USB / removable devices                       |
+| Removable   | USB/removable devices                         |
 | PUA         | Potentially Unwanted Applications             |
 | DriveBy     | Malicious websites                            |
 | NetShare    | Network shares                                |
@@ -89,4 +89,4 @@ This document describes the complete set of dictionaries used by **MDIS** (Malwa
 
 ---
 
-> **Note:** This dictionary may be extended in the future to support additional platforms, behaviors, or infection vectors. Pull requests are always welcome at the [official repository](https://github.com/memecoder123456/MDIS.git) ❤️
+> **Note:** This dictionary may be extended to support additional platforms, behaviors, or infection vectors. Pull requests are always welcome at the [official repository](https://github.com/memecoder123456/MDIS.git) ❤️
