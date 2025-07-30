@@ -1,4 +1,4 @@
-# 📘 MDIS - Malware Dictionaries
+# MDIS - Malware Dictionaries 📘
 
 This document describes the complete set of dictionaries used by **MDIS** (Malware Detection and Identification System) to standardize and define malware. These dictionaries allow the system to easily parse, extract, and display information in a format that is human-readable and machine-processable.
 
