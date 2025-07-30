@@ -85,6 +85,7 @@ This document describes the complete set of dictionaries used by **MDIS** (Malwa
 | Script      | Malicious macros, PowerShell, JS              |
 | DriveAuto   | Spreads via autorun.inf (legacy Windows)      |
 | Unknown     | Vector not identified (needs deeper analysis) |
+| None        | No self-propagation (manual install only)     |
 
 ---
 
