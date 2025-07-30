@@ -39,7 +39,7 @@ DICTIONARIES = {
         "Clear": "Clear Linux",
         "RHEL": "Red Hat Enterprise",
         "SLES": "SUSE Enterprise",
-        "Nix": "NixOS"
+        "Nix": "NixOS",
     },
     "behaviors": {
         "Ransom": "Encrypts data for ransom",
@@ -76,6 +76,9 @@ DICTIONARIES = {
         "Loader": "Used to load other malware",
         "Packer": "Packed to avoid detection",
         "Scanner": "Scans for vulnerabilities",
+        "HackTool": "Used for hacking or cracking",
+        "FakeTool": "Fake hacking or cracking tool",
+        "Unknow": "Unknown behavior (needs deeper analysis)",
     },
     "infection_vectors": {
         "Phish": "Phishing emails/websites",
@@ -118,7 +121,6 @@ def _build_mdis_regex(dictionaries):
         f"#{behaviors_pattern}"
         f"!{vectors_pattern}$"
     )
-    # print(full_pattern)
     return re.compile(full_pattern, re.IGNORECASE)
 
 
@@ -189,6 +191,9 @@ class MDISParser:
         self.identifier = identifier
         self._match = self.REGEX_PATTERN.match(self.identifier)
 
+    def __str__(self):
+        return f"MDISParser(identifier='{self.identifier}')"
+
     def is_valid(self):
         """
         Check if the identifier is valid based on MDIS regex rules.
@@ -221,12 +226,20 @@ class MDISParser:
             version_structured = version[1]
             behaviors = data["behavior"].split("_")
             behavior_descs = [
-                {"code": b, "description": DICTIONARIES["behaviors"].get(b.capitalize())}
+                {
+                    "code": b,
+                    "description": DICTIONARIES["behaviors"].get(b.capitalize()),
+                }
                 for b in behaviors
             ]
             vectors = data["vector"].split("_")
             vector_descs = [
-                {"code": v, "description": DICTIONARIES["infection_vectors"].get(v.capitalize())}
+                {
+                    "code": v,
+                    "description": DICTIONARIES["infection_vectors"].get(
+                        v.capitalize()
+                    ),
+                }
                 for v in vectors
             ]
             result = {
