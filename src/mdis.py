@@ -350,9 +350,9 @@ class MDISParser:
         try:
             os_code = fields["os"]
             family = fields["family"]
-            behavior = fields["behavior"]
             version = fields["version"]
-            vector = fields["vector"]
+            behavior = "_".join(fields["behavior"]) if isinstance(fields["behavior"], list) else fields["behavior"]
+            vector = "_".join(fields["vector"]) if isinstance(fields["vector"], list) else fields["vector"]
         except KeyError as e:
             raise ValueError(f"Missing required field: {e}")
         id_str = f"{os_code}:{family}.{version}#{behavior}!{vector}"
