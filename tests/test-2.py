@@ -1,6 +1,6 @@
 from MDIS import MDISParser
 
 # Test case
-test_cases = ["And:SpyFin.II.B#Spy_Banker!Phish", "Win:DCry.A#Ransom!Removable"]
+test_cases = ["MSE:McAfee.I.A#Bypass_FakeAV_Joker_Adware!Phish ", "MSE:Avast.I.A#Bypass_FakeAV_Joker_Adware_Stealer_Resurrector_Spy!Phish"]
 for id in test_cases:
     MDISParser(id).dump_report_file()
