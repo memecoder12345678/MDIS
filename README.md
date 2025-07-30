@@ -2,7 +2,7 @@
 
 <div align="center">
   <img src="https://img.shields.io/badge/creator-MemeCoder-red" alt="Made with ❤️ by MemeCoder">
-  <img src="https://img.shields.io/badge/Python-3.12%2B-blue?logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/github/license/memecoder12345678/MDIS?style=flat&logo=open-source-initiative&logoColor=white" alt="License">
   <img src="https://img.shields.io/github/stars/memecoder12345678/MDIS?style=social" alt="Stars">
 </div>
